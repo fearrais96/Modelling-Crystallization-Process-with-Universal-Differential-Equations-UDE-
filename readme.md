@@ -9,5 +9,5 @@ The performance of the UDE is published in Chemical Engineering Research and Des
 
 Inside the data folder, there are two folders according to the article's organization:
 
-- Training with all experiments: data used for training and testing the UDEs using all experimental data for the traning.
-- Training with some experiments: data used for training and testing the UDEs using part of the experimental data for the traning.
+- Training with all experiments: data used for training and testing the UDEs using all experimental data for the training.
+- Training with some experiments: data used for training and testing the UDEs using part of the experimental data for the training.
