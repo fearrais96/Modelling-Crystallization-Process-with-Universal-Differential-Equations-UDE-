@@ -14,9 +14,9 @@ from sklearn.preprocessing import MinMaxScaler
 
 # Saving the experimental data in a variable
 
-experimental_data_cresc = pd.read_csv("Cresc_Nucl_K2SO4_7exps_train.csv")
+experimental_data_cresc = pd.read_csv("Cresc_Nucl_K2SO4_7exps_train_new.csv")
 
-experimental_data_diss = pd.read_csv("Dissolucao_K2SO4_4exps.csv")
+experimental_data_diss = pd.read_csv("Dissolucao_K2SO4_4exps_new.csv")
 
 batch1 = (experimental_data_diss[(experimental_data_diss["Experiment"] == 0)]).values
 batch2 = (experimental_data_diss[(experimental_data_diss["Experiment"] == 1)]).values
@@ -111,11 +111,13 @@ def modelagem_PB(entrada, t, T, wH_D, bH_D, wOut_D, bOut_D):
 
     D = NN_D(input_D, len(bH_D), wH_D, bH_D, wOut_D, bOut_D)
 
+    psi = r_3*mu0*kv*1e-12
+
     dmi0dt = 0
     dmi1dt = D * 1e4
     dmi2dt = 2.0 * D * r_1 * 1e-4 * 1e8
     dmi3dt = 3.0 * D * r_2 * 1e-8 * 1e12
-    dcdt = -3.0 * ro * kv * D * r_2 * mu0 * 1e-8
+    dcdt = -3.0 * ro * kv * D * r_2 * mu0 * 1e-8/(1 - psi)
 
     return [dmi0dt, dmi1dt, dmi2dt, dmi3dt, dcdt]
 

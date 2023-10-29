@@ -14,7 +14,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 # Saving the experimental data in a variable
 
-experimental_data = pd.read_csv("Cresc_Nucl_K2SO4_7exps_train.csv")
+experimental_data = pd.read_csv("Cresc_Nucl_K2SO4_7exps_train_new.csv")
 
 r3_exp = np.zeros(len(experimental_data))
 
@@ -126,11 +126,13 @@ def modelagem_PB(entrada, t, T, wH_G, bH_G, wOut_G, bOut_G):
 
     G_0 = NN_G(input_G, len(bH_G), wH_G, bH_G, wOut_G, bOut_G)
 
+    psi = r_3*mu0*kv*1e-12
+
     dmi0dt = B * mu0
     dmi1dt = G_0 * (1 + gamma * r_1 * 1e-4) * 1e4 - B * r_1 * 1e-4 * 1e4
     dmi2dt = 2.0 * G_0 * (r_1 * 1e-4 + gamma * r_2 * 1e-8) * 1e8 - B * r_2 * 1e-8 * 1e8
     dmi3dt = 3.0 * G_0 * (r_2 * 1e-8 + gamma * r_3 * 1e-12) * 1e12 - B * r_3 * 1e-12 * 1e12
-    dcdt = -3.0 * ro * kv * G_0 * (r_2 * 1e-8 + gamma * r_3 * 1e-12) * mu0
+    dcdt = -3.0 * ro * kv * G_0 * (r_2 * 1e-8 + gamma * r_3 * 1e-12) * mu0/(1 - psi)
 
     return [dmi0dt, dmi1dt, dmi2dt, dmi3dt, dcdt]
 
