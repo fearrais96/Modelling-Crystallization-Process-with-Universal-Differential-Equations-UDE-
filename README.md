@@ -2,7 +2,7 @@
 
 This is an implementation of Universal Differential Equations in Python for modeling the potassium sulfate batch crystallization in water, considering nucleation, growth, and dissolution.
 
-The performance of the UDE is published in Chemical Engineering Research and Design in an article entitled "Improved Modelling of Crystallization Processes by Universal Differential Equations". 
+The performance of the UDE is published in Chemical Engineering Research and Design in an article entitled "Improved Modelling of Crystallization Processes by Universal Differential Equations" (https://doi.org/10.1016/j.cherd.2023.11.032). 
 
 
 # Data
