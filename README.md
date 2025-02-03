@@ -102,4 +102,4 @@ See the full license details in the LICENSE.txt.
 For any inquiries, please contact **Fernando Arrais Romero Dias Lima** at **farrais@eq.ufrj.br** or open an issue in this repository.
 
 ## ⭐ Acknowledgments
-We acknowledge the support of **Federal University of Rio de Janeiro**, **Capes**, and all contributors.
+We acknowledge the support of **Federal University of Rio de Janeiro**, **Norwegian University of Science and Technology**, **Capes**, and all contributors.
